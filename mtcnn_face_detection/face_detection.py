@@ -2,7 +2,7 @@ import cv2
 import mtcnn
 
 face_detector = mtcnn.MTCNN()
-img = cv2.imread('family.jpg')
+img = cv2.imread('friends.jpg')
 
 results = face_detector.detect_faces(img)
 conf_t = 0.99
