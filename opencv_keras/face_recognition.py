@@ -1,3 +1,9 @@
+
+# -*- coding: utf-8 -*-
+"""
+@author: Krish.Naik
+"""
+
 from keras.layers import Input, Lambda, Dense, Flatten
 from keras.models import Model
 from keras.applications.vgg16 import VGG16
@@ -12,8 +18,8 @@ import matplotlib.pyplot as plt
 # re-size all the images to this
 IMAGE_SIZE = [224, 224]
 
-train_path = 'datasets/Train'
-valid_path = 'datasets/Test'
+train_path = './Dataset/Train'
+valid_path = './Dataset/Test'
 
 # add preprocessing layer to the front of VGG
 vgg = VGG16(input_shape=IMAGE_SIZE + [3], weights='imagenet', include_top=False)
@@ -25,7 +31,7 @@ for layer in vgg.layers:
 
   
   # useful for getting number of classes
-folders = glob('Datasets/Train/*')
+folders = glob('Dataset/Train/*')
   
 
 # our layers - you can add more if you want
@@ -56,12 +62,12 @@ train_datagen = ImageDataGenerator(rescale = 1./255,
 
 test_datagen = ImageDataGenerator(rescale = 1./255)
 
-training_set = train_datagen.flow_from_directory('Datasets/Train',
+training_set = train_datagen.flow_from_directory('Dataset/Train',
                                                  target_size = (224, 224),
                                                  batch_size = 32,
                                                  class_mode = 'categorical')
 
-test_set = test_datagen.flow_from_directory('Datasets/Test',
+test_set = test_datagen.flow_from_directory('Dataset/Test',
                                             target_size = (224, 224),
                                             batch_size = 32,
                                             class_mode = 'categorical')
@@ -73,7 +79,7 @@ test_set = test_datagen.flow_from_directory('Datasets/Test',
                          nb_val_samples = 2000)'''
 
 # fit the model
-r = model.fit(
+r = model.fit_generator(
   training_set,
   validation_data=test_set,
   epochs=5,
@@ -98,6 +104,5 @@ import tensorflow as tf
 
 from keras.models import load_model
 
-model.save('facefeatures_new_model.h5')
+model.save('facefeatures_new_model_21.h5')
 
-#model still needs to be created
