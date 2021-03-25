@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 # re-size all the images to this
 IMAGE_SIZE = [224, 224]
 
-train_path = './Dataset/Train'
-valid_path = './Dataset/Test'
+train_path = 'Dataset/Train'
+valid_path = 'Dataset/Test'
 
 # add preprocessing layer to the front of VGG
 vgg = VGG16(input_shape=IMAGE_SIZE + [3], weights='imagenet', include_top=False)
@@ -31,8 +31,8 @@ for layer in vgg.layers:
 
   
   # useful for getting number of classes
-folders = glob('Dataset/Train/*')
-  
+folders = glob('Dataset/Train/*') #gets how many folders are there in dataset
+#print(folders) 
 
 # our layers - you can add more if you want
 x = Flatten()(vgg.output)
