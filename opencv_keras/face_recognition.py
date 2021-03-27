@@ -20,6 +20,7 @@ IMAGE_SIZE = [224, 224]
 
 train_path = 'Dataset/Train'
 valid_path = 'Dataset/Test'
+print(train_path)
 
 # add preprocessing layer to the front of VGG
 vgg = VGG16(input_shape=IMAGE_SIZE + [3], weights='imagenet', include_top=False)
@@ -32,7 +33,7 @@ for layer in vgg.layers:
   
   # useful for getting number of classes
 folders = glob('Dataset/Train/*') #gets how many folders are there in dataset
-#print(folders) 
+print(folders) 
 
 # our layers - you can add more if you want
 x = Flatten()(vgg.output)
@@ -82,7 +83,7 @@ test_set = test_datagen.flow_from_directory('Dataset/Test',
 r = model.fit_generator(
   training_set,
   validation_data=test_set,
-  epochs=5,
+  epochs=6,
   steps_per_epoch=len(training_set),
   validation_steps=len(test_set)
 )
@@ -104,5 +105,5 @@ import tensorflow as tf
 
 from keras.models import load_model
 
-model.save('facefeatures_new_model_21.h5')
+model.save('facefeatures_new_model.h5') #89.13% accuracy
 
