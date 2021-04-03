@@ -8,14 +8,18 @@ from matplotlib import pyplot
 # load faces
 data = load('5-celebrity-faces-dataset.npz')
 testX_faces = data['arr_2']
+#print(data['arr_2'])
+#print(testX_faces)
 # load face embeddings
 data = load('5-celebrity-faces-embeddings.npz')
+#print(len(data['arr_2']))
 trainX, trainy, testX, testy = data['arr_0'], data['arr_1'], data['arr_2'], data['arr_3']
 # normalize input vectors
 in_encoder = Normalizer(norm='l2')
 trainX = in_encoder.transform(trainX)
 testX = in_encoder.transform(testX)
-# label encode targets
+#print(testX)
+# label encode targets0
 out_encoder = LabelEncoder()
 out_encoder.fit(trainy)
 trainy = out_encoder.transform(trainy)
@@ -25,8 +29,11 @@ model = SVC(kernel='linear', probability=True)
 model.fit(trainX, trainy)
 # test model on a random example from the test dataset
 selection = choice([i for i in range(testX.shape[0])])
+print(selection)
 random_face_pixels = testX_faces[selection]
+print(random_face_pixels)
 random_face_emb = testX[selection]
+print(random_face_emb.shape)
 random_face_class = testy[selection]
 random_face_name = out_encoder.inverse_transform([random_face_class])
 # prediction for the face
@@ -34,6 +41,7 @@ samples = expand_dims(random_face_emb, axis=0)
 yhat_class = model.predict(samples)
 yhat_prob = model.predict_proba(samples)
 # get name
+#print(yhat_class)
 class_index = yhat_class[0]
 class_probability = yhat_prob[0,class_index] * 100
 predict_names = out_encoder.inverse_transform(yhat_class)

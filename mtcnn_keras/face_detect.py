@@ -1,12 +1,3 @@
-from keras.models import load_model
-# load the model
-model = load_model('model/facenet_keras.h5')
-import mtcnn
-# print version
-#print(mtcnn.__version__)
-	
-# function for face detection with mtcnn
-
 # demonstrate face detection on 5 Celebrity Faces Dataset
 # face detection for the 5 Celebrity Faces Dataset
 from os import listdir
@@ -40,6 +31,7 @@ def extract_face(filename, required_size=(160, 160)):
 	image = Image.fromarray(face)
 	image = image.resize(required_size)
 	face_array = asarray(image)
+	#print(face_array)
 	return face_array
  
 # load images and extract faces for all images in a directory
