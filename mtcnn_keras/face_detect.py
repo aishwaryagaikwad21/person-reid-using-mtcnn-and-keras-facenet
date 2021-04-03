@@ -74,4 +74,4 @@ print(trainX.shape, trainy.shape)
 # load test dataset
 testX, testy = load_dataset('archive/val/')
 # save arrays to one file in compressed format
-savez_compressed('5-celebrity-faces-dataset.npz', trainX, trainy, testX, testy)
+savez_compressed('faces-dataset.npz', trainX, trainy, testX, testy)
