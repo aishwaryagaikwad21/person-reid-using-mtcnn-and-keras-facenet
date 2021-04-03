@@ -26,7 +26,7 @@ data = load('5-celebrity-faces-dataset.npz')
 testX_faces = data['arr_2']
 #image to array
 required_size=(160,160)
-image = Image.open('mon.jpg')
+image = Image.open('images/mon.jpg')
 image = image.convert('RGB')
 pixels = asarray(image)
 detector = MTCNN()
