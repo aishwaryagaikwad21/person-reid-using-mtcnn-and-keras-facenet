@@ -22,7 +22,7 @@ from matplotlib import pyplot
 
 model = load_model('facenet_keras.h5')
 
-data = load('5-celebrity-faces-dataset.npz')
+data = load('faces-dataset.npz')
 testX_faces = data['arr_2']
 #image to array
 required_size=(160,160)
