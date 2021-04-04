@@ -72,12 +72,12 @@ from sklearn.preprocessing import Normalizer
 from sklearn.svm import SVC
 from matplotlib import pyplot
 # load faces
-data = load('5-celebrity-faces-dataset.npz')
+data = load('faces-dataset.npz')
 testX_faces = data['arr_2']
 #print(data['arr_2'])
 #print(testX_faces)
 # load face embeddings
-data = load('5-celebrity-faces-embeddings.npz')
+data = load('faces-embeddings.npz')
 #print(len(data['arr_2']))
 trainX, trainy, testX, testy = data['arr_0'], data['arr_1'], data['arr_2'], data['arr_3']
 # normalize input vectors
