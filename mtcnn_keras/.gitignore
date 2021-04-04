@@ -2,4 +2,6 @@ archive/data/train
 archive/data/val
 archive/train/*
 archive/val/*
-./images
+images/
+!prediction.py
+!pe_reid.py
