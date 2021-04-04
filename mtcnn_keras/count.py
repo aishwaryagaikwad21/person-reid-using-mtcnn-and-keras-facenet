@@ -4,18 +4,6 @@ from PIL import Image
 from keras.preprocessing import image
 from numpy import asarray
 from mtcnn.mtcnn import MTCNN
-
-image = Image.open('joe.jpg')
-image = image.convert('RGB')
-pixels = asarray(image)
-detector = MTCNN()
-results = detector.detect_faces(pixels)
-x1, y1, width, height = results[0]['box']
-x1, y1 = abs(x1), abs(y1)
-x2, y2 = x1 + width, y1 + height
-	# extract the face
-face = pixels[y1:y2, x1:x2]
-
 #For training set
 files_train = folders_train = 0
 path_train = 'archive/train'
