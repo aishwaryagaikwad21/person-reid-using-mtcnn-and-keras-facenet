@@ -38,5 +38,5 @@ for face_pixels in testX:
 	newTestX.append(embedding)
 newTestX = asarray(newTestX)
 print(newTestX.shape)
-# save arrays to one file in compressed format
+# save embeddings to one file in compressed format
 savez_compressed('faces-embeddings.npz', newTrainX, trainy, newTestX, testy)

@@ -27,8 +27,9 @@ model = load_model('facenet_keras.h5')
 #load numpy array dataset
 data = load('faces-dataset.npz')
 testX_faces = data['arr_2']
+#images/rachel,images/chandler,images/mon, ele, elena_gilbert, gilbert, katherine, ele_gil, elena
 #image to array
-input_image = 'images/geller.jpg'
+input_image = 'images/ele_gil.jpg'
 required_size=(160,160)
 image = Image.open(input_image)
 image = image.convert('RGB')
@@ -97,7 +98,7 @@ if(class_probability<40):
     os.mkdir(directory)
 
     count = 0
-    while count<11:
+    while count<40:
         file_train = 'archive/train/'+ str(folders_train) + '/' + str(count) + '.jpg'
         img = cv2.imread(input_image)
         print(file_train)
@@ -116,7 +117,7 @@ if(class_probability<40):
     os.mkdir(directory)
 
     count = 0
-    while count<6:
+    while count<20:
         file_val = 'archive/val/'+ str(folders_val) + '/' + str(count) + '.jpg'
         img = cv2.imread(input_image)
         print(file_val)
