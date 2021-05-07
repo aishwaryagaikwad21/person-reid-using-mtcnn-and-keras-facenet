@@ -19,7 +19,7 @@ Run fittingLinearSvm.py
   - Fitting a linear SVM on face embeddings
 ```
 ```
-Run pe_reid.py
+Run person_reid.py
   - Predicting the identity for a given unseen photo in the test dataset
 ```
  
