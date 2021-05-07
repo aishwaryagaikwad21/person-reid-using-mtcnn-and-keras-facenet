@@ -29,11 +29,12 @@ data = load('faces-dataset.npz')
 testX_faces = data['arr_2']
 #images/rachel,images/chandler,images/mon, ele, elena_gilbert, gilbert, katherine, ele_gil, elena
 #image to array
-input_image = 'images/ele_gil.jpg'
+input_image = 'images/ele.jpg'
 required_size=(160,160)
 image = Image.open(input_image)
 image = image.convert('RGB')
 pixels = asarray(image)
+print(pixels)
 detector = MTCNN()
 results = detector.detect_faces(pixels)
 x1, y1, width, height = results[0]['box']
@@ -45,6 +46,7 @@ face = pixels[y1:y2, x1:x2]
 image = Image.fromarray(face)
 image = image.resize(required_size)
 face_array = asarray(image) #imp
+#print(face_array)
 #Embedding
 face_pixels = face_array.astype('float32')
 	# standardize pixel values across channels (global)
