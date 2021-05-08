@@ -3,6 +3,11 @@ Person Reidentification using mtcnn for face detection and keras-facenet for rec
 - git clone https://github.com/aishwaryagaikwad21/person-reid-using-mtcnn-and-keras-facenet
 - Download model from [link](https://drive.google.com/drive/folders/14UntmrJuCO9uTdzMKnLIvuDw2Wwkfwdn)
 ```
+Run person_reid.py
+  - Predicting the identity for a given unseen photo in the test dataset
+  - If match found ID will be displayed else new ID will be assigned and run following files
+ ```
+ ```
 Run face_detect.py 
   - MTCNN will detect faces then a compressed numpy array file '.npz' will be created 
  ```
@@ -18,8 +23,5 @@ Run fittingLinearSvm.py
   - Evaluate the model
   - Fitting a linear SVM on face embeddings
 ```
-```
-Run person_reid.py
-  - Predicting the identity for a given unseen photo in the test dataset
-```
+
  
