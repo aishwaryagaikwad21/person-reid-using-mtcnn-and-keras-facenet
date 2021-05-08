@@ -4,7 +4,7 @@ Person Reidentification using mtcnn for face detection and keras-facenet for rec
 - Download model from [link](https://drive.google.com/drive/folders/14UntmrJuCO9uTdzMKnLIvuDw2Wwkfwdn)
 ```
 Run person_reid.py
-  - Predicting the identity for a given unseen photo in the test dataset
+  - Predicting the identity for a given unseen person from video
   - If match found ID will be displayed else new ID will be assigned and run following files
  ```
  ```
