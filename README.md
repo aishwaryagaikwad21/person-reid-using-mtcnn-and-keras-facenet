@@ -2,6 +2,7 @@
 Person Reidentification using mtcnn for face detection and keras-facenet for recognition
 - git clone https://github.com/aishwaryagaikwad21/person-reid-using-mtcnn-and-keras-facenet
 - Download model from [link](https://drive.google.com/drive/folders/14UntmrJuCO9uTdzMKnLIvuDw2Wwkfwdn)
+- Published paper - https://www.itm-conferences.org/articles/itmconf/pdf/2021/05/itmconf_icacc2021_03027.pdf
 ```
 Run person_reid.py
   - Predicting the identity for a given unseen person from video
